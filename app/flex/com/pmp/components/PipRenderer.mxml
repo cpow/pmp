@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:me="components.*" horizontalAlign="center" verticalAlign="middle" cornerRadius="5" borderStyle="solid" width="75%">
+	
+	<mx:Script>
+		<![CDATA[
+		private var _data:Object;
+
+            override public function set data(value:Object):void {
+                _data = value;
+                
+                if (data != null) {
+                	pip.text = _data.pip; 
+                	
+                	if(pip.text == "Kickoff"){
+                		setStyle("backgroundColor", 0x13aaca);
+                		setStyle("color", 0xFFFFFF);
+                		setStyle("fontWeight", "bold");
+                	}
+                	
+                	if(pip.text == "In The Works"){
+                		setStyle("backgroundColor", 0x27CF00);
+                		setStyle("color", 0xFFFFFF);
+                		setStyle("fontWeight", "bold");
+                	}
+                	
+                	if(pip.text == "Upcoming"){
+                		setStyle("backgroundColor", 0xc0c0c0);
+                		setStyle("color", 0xFFFFFF);
+                		setStyle("fontWeight", "bold");
+                	}
+                	
+                	if(pip.text == "Advocacy"){
+                		setStyle("backgroundColor", 0xea0000);
+                		setStyle("color", 0xFFFFFF);
+                		setStyle("fontWeight", "bold");
+                	}          	
+                   
+                }
+            }
+
+            override public function get data():Object {
+                return _data;
+            }
+	
+		]]>
+	</mx:Script>
+	
+	
+	<mx:Text id="pip"/>
+	
+</mx:HBox>

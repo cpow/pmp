@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" label="New Company">
+	<mx:Metadata>
+		[Event(name="companyCreate", type="com.pmp.events.CompanyEvent")]
+	</mx:Metadata>
+	<mx:Script>
+		<![CDATA[
+			import mx.rpc.events.ResultEvent;
+			import com.pmp.events.CompanyEvent;
+			import mx.collections.XMLListCollection;
+			
+			[Bindable]
+			private var _selectedPipId:int;
+			
+			[Bindable]
+			public var pipsXLC:XMLListCollection;
+			
+			private function handleCompanyCreateResult(event:ResultEvent):void{
+				var resultXML: XML = XML(event.result);
+				pmp.debug("CompanyCreateBox#handleCompanyCreateResult\n" + resultXML.toString());
+				dispatchEvent(new CompanyEvent(CompanyEvent.COMPANY_CREATE, resultXML));
+			}
+			
+			private function doCompanyCreate():void{
+				svcCompaniesCreate.send();
+				clearForm();
+			}
+			
+			public function clearForm():void {
+				nameTI.text = "";
+				packsTI.text = "";
+				mainContactTI.text = "";
+				mainContactEmailTI.text = "";
+			}
+			
+		]]>
+	</mx:Script>
+	
+	<mx:HTTPService
+		id="svcCompaniesCreate"
+		url="/companies.xml"
+		contentType="application/xml"
+		resultFormat="e4x"
+		method="POST"
+		result="handleCompanyCreateResult(event)">
+		<mx:request>
+			<company>
+				<name>
+					{nameTI.text}
+				</name>
+				<main_contact>
+					{mainContactTI.text}
+				</main_contact>
+				<main_contact_email>
+					{mainContactEmailTI.text}
+				</main_contact_email>
+				<packs>
+					{packsTI.text}
+				</packs>
+				<pip>
+					{pipCB.selectedItem.label}
+				</pip>
+			</company>
+		</mx:request>
+	</mx:HTTPService>
+	
+	<mx:Form width="100%" height="100%">
+		<mx:FormItem label="Company">
+			<mx:TextInput id="nameTI" width="150"/>
+		</mx:FormItem>
+		<mx:FormItem label="Main Contact">
+			<mx:TextInput id="mainContactTI" width="150"/>
+		</mx:FormItem>
+		<mx:FormItem label="Email">
+			<mx:TextInput id="mainContactEmailTI" width="150"/>
+		</mx:FormItem>
+		<mx:FormItem label="Packs">
+			<mx:TextInput id="packsTI" width="150"/>
+		</mx:FormItem>
+		<mx:FormItem label="P.I.P">
+			<mx:ComboBox id="pipCB" width="150">
+				<mx:ArrayCollection>
+        			<mx:Object label="Kickoff"/>
+         			<mx:Object label="In The Works"/>
+         			<mx:Object label="Upcoming"/>
+         			<mx:Object label="Advocacy"/>
+      			</mx:ArrayCollection> 
+      			</mx:ComboBox>
+		</mx:FormItem>
+		<mx:FormItem>
+			<mx:Button label="Submit" width="150" height="30"
+				click="doCompanyCreate()"/>
+		</mx:FormItem>
+	</mx:Form>
+	
+	
+</mx:VBox>

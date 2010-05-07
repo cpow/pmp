@@ -1,0 +1,43 @@
+<h1>New company</h1>
+
+<% form_for(@company) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :pip %><br />
+    <%= f.text_field :pip %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :notes %><br />
+    <%= f.text_area :notes %>
+  </p>
+  <p>
+    <%= f.label :urls %><br />
+    <%= f.text_area :urls %>
+  </p>
+  <p>
+    <%= f.label :main_contact %><br />
+    <%= f.text_field :main_contact %>
+  </p>
+  <p>
+    <%= f.label :main_contact_email %><br />
+    <%= f.text_field :main_contact_email %>
+  </p>
+  <p>
+    <%= f.label :usernames %><br />
+    <%= f.text_area :usernames %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', companies_path %>

@@ -1,0 +1,43 @@
+<p>
+  <b>User:</b>
+  <%=h @company.user_id %>
+</p>
+
+<p>
+  <b>Pip:</b>
+  <%=h @company.pip %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @company.name %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%=h @company.notes %>
+</p>
+
+<p>
+  <b>Urls:</b>
+  <%=h @company.urls %>
+</p>
+
+<p>
+  <b>Main contact:</b>
+  <%=h @company.main_contact %>
+</p>
+
+<p>
+  <b>Main contact email:</b>
+  <%=h @company.main_contact_email %>
+</p>
+
+<p>
+  <b>Usernames:</b>
+  <%=h @company.usernames %>
+</p>
+
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>

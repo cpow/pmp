@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:pom="com.pmp.components.*"
+	minWidth="1000"
+	minHeight="680"
+	paddingLeft="5"
+	paddingRight="5"
+	paddingTop="5"
+	paddingBottom="5"
+	width="100%" 
+	height="100%" 
+	backgroundColor="#FFFFFF"
+	creationComplete = "handleCreationComplete()">
+		
+	<mx:Script>
+		<![CDATA[
+			[Bindable]
+			public var user:XML;
+			
+			[Bindable]
+			public var _pipIdMap:Object;
+			
+			[Bindable]
+			public var _userIdMap:Object;
+			
+			[Bindable]
+			private var _gotPips:Boolean;
+			
+			import mx.rpc.events.ResultEvent;
+			import com.pmp.util.XMLUtils;
+			import mx.collections.ArrayCollection;
+			import mx.collections.IViewCursor;
+			import mx.controls.Alert;
+			import flash.utils.Timer;
+			import com.pmp.components.Nav;
+			
+			
+			public function listCompanies():void{
+				svcCompaniesList.send();
+			}
+			
+			public function listUsers():void{
+				svcUsersList.send();
+			}
+			
+			public function listPips():void{
+				svcPipsList.send();
+			}
+			
+			
+			
+			private function handleCompaniesListResult(event:ResultEvent):void{
+				var resultXML: XML = XML(event.result);
+				pmp.debug("MainBox#handleCompaniesListResult:\n" + resultXML.toString());
+			}
+			
+			private function handleUsersListResult(event:ResultEvent):void{
+				var resultXML: XML = XML(event.result);
+				pmp.debug("MainBox#handleUsersListResult:\n" + resultXML.toString());
+			}
+			
+			private function handlePipsListResult(event:ResultEvent):void{
+				_gotPips = true;
+				var resultXML: XML = XML(event.result);
+				pmp.debug("MainBox#handlePipsListResult:\n" + resultXML.toString());
+				updatePipIdMap();
+			}
+		
+			private function handleCreationComplete():void{
+				listPips();
+				_gotPips = false;
+			}
+			
+			private function updatePipIdMap():void{
+				_pipIdMap = {};
+				var pipsCursor:IViewCursor = pipsXLC.createCursor();
+				while (!pipsCursor.afterLast) {
+					var pip:XML = XML(pipsCursor.current);
+					_pipIdMap[pip.id] = pip;
+					pipsCursor.moveNext();
+				}
+				listCompaniesIfMapsPresent();
+			}
+			
+			
+			
+			private function listCompaniesIfMapsPresent():void{
+				if(_gotPips){
+					listCompanies();
+				}
+			}
+			
+			private function listUsersIfMapsPresent():void{
+				if(_gotPips){
+					listUsers();
+				}
+			}
+			
+			public function updateCompanyPip(company:XML, pip:XML):void{
+				if (company.pip_id != pip.id){
+					var params:Object = new Object();
+					var selectedCompany:XML = XML(companiesGrid.selectedItem);
+
+					if(pip.id == "2") {
+						params['company[pip_id]'] = pip.id;
+						params['_method'] = "GET";
+						svcCompaniesUpdate.url = "/companies/" + company.id + "/packsupdate";
+						svcCompaniesUpdate.send(params);
+						
+						if(selectedCompany.packs == "1"){
+							Alert.show("This company has zero packs left, please start the upsell process",selectedCompany.name());
+						}
+						if(selectedCompany.packs == "0"){
+							Alert.show("This company has zero packs. You cannot create another Test Cycle for this company. Please contact sales and/or finance.",selectedCompany.name());
+						}
+						if(selectedCompany.packs == "2"){
+							Alert.show("This company has one pack left, please start the upsell process soon",selectedCompany.name);
+						}
+						params['_method'] = "PUT";
+						svcCompaniesUpdate.url = "/companies/" + company.id + ".xml";
+						svcCompaniesUpdate.send(params);
+						
+					}
+					else {
+						params['company[pip_id]'] = pip.id;
+						params['_method'] = "PUT";
+						svcCompaniesUpdate.url = "/companies/" + company.id + ".xml";
+						svcCompaniesUpdate.send(params);
+						
+						}
+				
+			
+				}
+			}
+			
+			public function updateSelectedCompanyFromSummaryPanel():void{
+				var selectedCompany:XML = XML(companiesGrid.selectedItem);
+				var params:Object = new Object();
+				params['company[main_contact]'] = contactTI.text;
+				params['company[main_contact_email]'] = contactEmailTI.text;
+				params['company[notes]'] = notesTI.text;
+				params['company[urls]'] = urlsTI.text;	
+				params['company[packs]'] = packsTI.text;
+				params['company[pip_id]'] = pipCB.selectedItem; 			
+				params['_method]'] = "PUT";
+				svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
+				svcCompaniesUpdate.send(params);
+			}
+			
+			public function getPip(pip_id:int):XML{
+				return _pipIdMap[pip_id];
+			}
+			
+			public function getUser(user_id:int):XML{
+				return _userIdMap[user_id];
+			}
+			
+			
+			private function handleCompaniesUpdateResult(event:ResultEvent):void {
+				var newCompany:XML = XML(event.result);
+				for (var i:int = 0; i< companiesXLC.length; i++) {
+					var ithCompany:XML = XML(companiesXLC.getItemAt(i));
+					if (ithCompany.id == newCompany.id) {
+						companiesXLC.setItemAt(newCompany, i);
+						break;
+					}
+				}
+			}
+			
+			public function handleAllClick():void{
+				Alert.show("You do not have permission to access that","No Permission");
+			}
+			
+			
+			
+		]]>
+	</mx:Script>
+	
+	
+	<mx:HTTPService id="svcCompaniesList"
+		url="/companies.xml"
+		resultFormat="e4x"
+		result="handleCompaniesListResult(event)"/>
+	<mx:XMLListCollection id="companiesXLC"
+		source="{XMLList(svcCompaniesList.lastResult.children())}"/>
+		
+	<mx:HTTPService id="svcUsersList"
+		url="/users.xml"
+		resultFormat="e4x"
+		result="handleUsersListResult(event)"/>
+	<mx:XMLListCollection id="usersXLC"
+		source="{XMLList(svcUsersList.lastResult.children())}"/>
+		
+	<mx:HTTPService id="svcPipsList"
+		url="/pips.xml"
+		resultFormat="e4x"
+		result="handlePipsListResult(event)"/>
+	<mx:XMLListCollection id="pipsXLC"
+		source="{XMLList(svcPipsList.lastResult.children())}"/>
+		
+	<mx:HTTPService id="svcCompaniesUpdate"
+		resultFormat="e4x"
+		method="POST"
+		result="handleCompaniesUpdateResult(event)"/>
+		
+	
+	
+		
+		
+	<pom:Nav allClick="handleAllClick();"/>
+	<mx:HBox height="100%" width="100%">
+		
+	
+		<mx:VBox width="300" height="100%" verticalAlign="middle" horizontalAlign="center">
+			<mx:Image source="com/pmp/assets/utest_logo.png"/>
+			<mx:HBox width="100%" height="30" horizontalAlign="center" verticalAlign="middle">
+				
+			</mx:HBox>
+			<mx:Panel width="100%" height="500" title="Add new Company" verticalAlign="middle">
+			<pom:CompanyCreateBox id="companyCreateBox"
+					companyCreate="listCompanies()"
+					pipsXLC = "{pipsXLC}"/>
+			
+			<mx:DateChooser id="dateChooser" width="100%" height="250" showToday="true" enabled="true"/>
+			</mx:Panel>
+		</mx:VBox>
+		<mx:VBox width="100%" height="100%">
+		<mx:Panel width="100%" height="100%" title="Customers in the Process" themeColor="#009DFF">
+		<mx:DataGrid id="companiesGrid" width="100%" height="65%" dataProvider="{companiesXLC}">
+			<mx:columns>
+				<mx:DataGridColumn headerText="Company Name" dataField="name"/>
+				<mx:DataGridColumn headerText="Place in Process" dataField="pip_id">
+					<mx:itemRenderer>
+						<mx:Component>
+						<mx:ComboBox
+							labelField="place"
+							dataProvider = "{outerDocument.pipsXLC}"
+							selectedItem = "{outerDocument.getPip(data.pip_id)}"
+							dataChange="handleDataChange(XML(data))"
+							change="outerDocument.updateCompanyPip(XML(data), XML(selectedItem))">
+							<mx:Script>
+								<![CDATA[
+									private function handleDataChange(data:XML):void{
+											outerDocument.getPip(data.pip_id);
+									}
+								]]>
+							</mx:Script>
+						</mx:ComboBox>
+						</mx:Component>
+					</mx:itemRenderer>
+				</mx:DataGridColumn>
+				<mx:DataGridColumn headerText="Main Contact" dataField="main_contact"/>
+				<mx:DataGridColumn headerText="Main Contact Email" dataField="main_contact_email"/>
+				<mx:DataGridColumn headerText="Packs" dataField="packs"/>
+			</mx:columns>
+		</mx:DataGrid>
+		
+		
+		<mx:Panel width="100%" height="35%" title="Company: {companiesGrid.selectedItem.name}" id="summaryPanel">
+		<mx:HBox width="100%" height="100%" paddingLeft="5" paddingRight="5" paddingBottom="5">
+			<mx:Form width="30%" height="100%">
+				<mx:FormItem label="Packs">
+					<mx:TextInput id="packsTI" width="150" text="{companiesGrid.selectedItem.packs}"/>
+				</mx:FormItem>
+				<mx:FormItem label="Contact">
+					<mx:TextInput id="contactTI" width="150" text="{companiesGrid.selectedItem.main_contact}"/>
+				</mx:FormItem>
+				<mx:FormItem label="Email">
+					<mx:TextInput id="contactEmailTI" width="150" text="{companiesGrid.selectedItem.main_contact_email}"/>
+				</mx:FormItem>
+				<mx:FormItem label="URL/Credentials">
+					<mx:TextArea id="urlsTI" width="160" height="70" text="{companiesGrid.selectedItem.urls}"/>
+				</mx:FormItem>
+			</mx:Form>
+			
+			
+			<mx:VBox width="70%" height="100%">
+				<mx:ComboBox
+							labelField="place"
+							id = "pipCB"
+							dataProvider = "{pipsXLC}"
+							selectedItem = "{getPip(data.pip_id)}">
+							
+						</mx:ComboBox>
+				<mx:Label text="Notes"/>
+				<mx:TextArea id="notesTI" width="100%" height="100%" text="{companiesGrid.selectedItem.notes}"/>
+			
+			
+			</mx:VBox>	
+				
+		</mx:HBox>
+		<mx:ControlBar width="100%" height="100%" horizontalAlign="center" verticalAlign="top">
+				<mx:Button id="updateButton"  label="Update" width="80%" labelPlacement="top"
+					click = "updateSelectedCompanyFromSummaryPanel()"
+					enabled="{companiesGrid.selectedItem != null}"/>
+		</mx:ControlBar>
+		</mx:Panel>
+		</mx:Panel>
+	</mx:VBox>
+		</mx:HBox>
+</mx:VBox>
+
+
+
+
+
+

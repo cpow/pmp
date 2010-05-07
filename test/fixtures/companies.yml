@@ -1,0 +1,50 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+cpows_company_one:
+  id: 1
+  user_id: 3
+  pip: Kickoff
+  packs: 3
+  name: Google Friend Connect
+  notes: This company is pretty awesome right now
+  urls: staging.friendconnect.google.com/friendconnect
+  main_contact: Josh Marantz
+  main_contact_email: jmarantz@google.com
+  usernames: There are no usernames for this proejct
+
+cpows_company_two:
+  id: 2
+  user_id: 3
+  pip: In The Works
+  packs: 2
+  name: Vlingo
+  notes: Vlingo is testing a mobile app and they require a lot of work. haha
+  urls: no URLs right now
+  main_contact: Jerry
+  main_contact_email: herry@vlingo.com
+  usernames: none
+  
+  
+cpows_company_three:
+  id: 3
+  user_id: 3
+  pip: Upcoming
+  packs: 0
+  name: Cooliris
+  notes: Cooliris has a cool app but I dont see it that often
+  urls: www.cooliris.com
+  main_contact: some girl
+  main_contact_email: girl@cooliris.com
+  usernames: none right now.
+  
+aarons_company_one:
+  id: 4
+  user_id: 2
+  pip: Kickoff
+  packs: 1
+  name: Google Docs Editor
+  notes: Lots of collaboration, this is a tough one.
+  urls: www.google.com/docs
+  main_contact: Lizzy Kimmel
+  main_contact_email: eskimmel@google.com
+  usernames: utest1/utestone, utest2/utesttwo up to five.

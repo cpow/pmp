@@ -1,0 +1,39 @@
+quentin:
+  id: 1
+  login: quentin
+  email: quentin@example.com
+  role: tcl
+  salt: 7e3041ebc2fc05a40c60028e2c4901a81035d3cd
+  crypted_password: 00742970dc9e6319f8019fd54864d3ea740f04b1 # test
+  created_at: <%= 5.days.ago.to_s :db %>
+
+
+
+aaron:
+  id: 2
+  login: aaron
+  email: aaron@example.com
+  role: pm
+  salt: 7e3041ebc2fc05a40c60028e2c4901a81035d3cd
+  crypted_password: 00742970dc9e6319f8019fd54864d3ea740f04b1 # test
+  created_at: <%= 1.days.ago.to_s :db %>
+
+
+
+cpow:
+  id: 3
+  login: cpow85
+  email: cpow85@gmail.com
+  role: pm
+  salt: 206e0a2fddd7f3dccdba6bab042163e3e471c8f5
+  crypted_password: 0446dec0fd7cee4c5165c2e5ea5280d33142e0d8  # test
+  created_at: <%= 5.days.ago.to_s :db %>
+  
+sales:
+  id: 4
+  login: sales
+  email: sales
+  role: sales
+  salt: 1030eba08c565c868d658b82c7b608f7741083e6
+  crypted_password: 0f8b8f65b5dadbb8484fe176fd1b6e29fa0c2f2f  # sales
+  created_at: 2010-04-27 18:41:31

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:pom="com.pmp.components.*"
+	layout="vertical"
+	backgroundGradientColors="[#ffffff, #c0c0c0]"
+	horizontalAlign="center"
+	verticalAlign="top"
+	width="100%"
+	height="100%"
+	paddingLeft="0"
+	paddingRight="0"
+	paddingTop="0"
+	paddingBottom="0">
+	
+	<mx:Script>
+		<![CDATA[
+			import com.pmp.components.DebugPanel;
+			import com.pmp.events.LoginEvent;
+			import com.pmp.util.DebugMessage;
+			import flash.events.MouseEvent;
+			import mx.controls.Alert;
+			
+			[Bindable]
+			private var _user :XML;
+			
+			private function handleLogin(e:LoginEvent) :void {
+				login(e.user);
+			}
+			
+			private function handleAllClick():void {
+				
+				mainStack.selectedChild = allBox;				
+			}
+			
+			private function handleMyClick():void{
+				mainStack.selectedChild = mainBox;
+			}
+			
+			private function handleLogoutClick():void{
+				svcLogout.send();
+				mainStack.selectedChild = splashBox;
+			}
+			
+			private function login(user:XML) :void {
+				_user = user;
+				debug("user = " + user);
+				
+				if (user.role == "sales"){
+					mainStack.selectedChild = allBox;
+				}
+				if (user.role == "pm") {
+					mainStack.selectedChild = mainBox;
+				}
+				if (user.role == "tcl") {
+					mainStack.selectedChild = tclBox; 
+				}
+			}
+			
+			public static function debug(str:String) :void{
+				application.debugPanel.addMessage(new DebugMessage(str));
+			}
+			
+		]]>
+	</mx:Script>
+	
+	<mx:HTTPService id="svcLogout"
+		url="/logout"
+		resultFormat="e4x"
+		method="GET"/>
+	
+	
+	<mx:VDividedBox width="100%" height="100%">
+		<mx:ViewStack id="mainStack" width="100%" height="100%">
+			<pom:SplashBox id="splashBox"
+				login="handleLogin(event)"/>	
+			<pom:MainBox id="mainBox" user="{_user}" 
+				allClick="handleAllClick()"
+				myClick="handleMyClick()"
+				logoutClick="handleLogoutClick()"/>
+			<pom:AllBox id="allBox" user="{_user}"
+				allClick="handleAllClick()"
+				myClick="handleMyClick()"
+				logoutClick="handleLogoutClick()"/>
+			<pom:TCLBox id="tclBox" user="{_user}"/>
+		</mx:ViewStack>
+		<pom:DebugPanel id="debugPanel" width="100%" height="0%"/>
+		</mx:VDividedBox>
+</mx:Application>

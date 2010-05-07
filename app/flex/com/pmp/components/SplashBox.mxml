@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:pom="com.pmp.components.*"
+	width="100%" height="100%">
+	
+	<mx:Metadata>
+		[Event(name="login", type="com.pmp.events.LoginEvent")]
+	</mx:Metadata>
+	
+	<mx:Script>
+		<![CDATA[
+			import com.pmp.events.LoginEvent;
+		]]>
+	</mx:Script>
+	
+	<mx:VBox id="splashBox" horizontalAlign="center" verticalAlign="middle" width="100%" height="100%">
+		
+	<mx:Image source="com/pmp/assets/utest_logo.png"/>
+	<mx:Label text="This is the PMP, All must obey the PMP"/>
+	<mx:Spacer height="10"/>
+	<mx:Panel width="400" height="200" label="Login" title="Login Please">
+	<pom:LoginBox/>
+	</mx:Panel>
+	<mx:Label text="You will use and obey the PIMP"/>
+	
+	</mx:VBox>
+</mx:VBox>
