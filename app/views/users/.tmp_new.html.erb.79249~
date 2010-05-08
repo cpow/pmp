@@ -12,7 +12,7 @@
 <p><label for="password_confirmation">Confirm Password</label><br/>
 <%= f.password_field :password_confirmation %></p>
 
-<p><label for="Role">Role</label><br/>
+<p><label for="Role">Email</label><br/>
 <%= f.text_field :role %></p>
 
 <p><%= submit_tag 'Sign up' %></p>
