@@ -265,7 +265,8 @@
 			
 			
 			<mx:VBox width="70%" height="100%">
-			<mx:ComboBox id = "pipCB" selectedItem = "{companiesGrid.selectedItem.pip}">
+			<mx:FormItem label="Place in Process">
+				<mx:ComboBox id = "pipCB" selectedItem = "{companiesGrid.selectedItem.pip}">
 				<mx:ArrayCollection>
          			<mx:Object label="Kickoff"/>
          			<mx:Object label="In The Works"/>
@@ -273,6 +274,8 @@
          			<mx:Object label="Advocacy"/>
       			</mx:ArrayCollection>
 			</mx:ComboBox>
+			</mx:FormItem>
+			
 				<mx:Label text="Notes"/>
 				<mx:TextArea id="notesTI" width="100%" height="100%" text="{companiesGrid.selectedItem.notes}"/>
 			
