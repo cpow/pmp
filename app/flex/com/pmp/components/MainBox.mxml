@@ -118,7 +118,6 @@
 				params['company[pip]'] = pipCB.selectedItem.label;
 						
 				if(pipCB.selectedItem.label == "In The Works") {
-						
 						params['_method'] = "GET";
 						svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + "/packsupdate";
 						svcCompaniesUpdate.send(params);
@@ -148,7 +147,8 @@
 							svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
 							svcCompaniesUpdate.send(params);
 					}
-					else {
+					
+					else if(pipCB.selectedItem.label != "In The Works") {
 						params['company[packs]'] = packsTI.text;
 						params['_method'] = "PUT";
 						svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
