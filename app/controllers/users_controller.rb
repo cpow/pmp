@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     # uncomment at your own risk
     # reset_session
     @user = User.new(params[:user])
-    @user.save
+    @user.save!
     self.current_user = @user
     respond_to do |format|
       format.html do
