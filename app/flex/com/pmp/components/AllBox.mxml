@@ -88,20 +88,20 @@
 			
 			private function handleCompaniesListResult(event:ResultEvent):void{
 				var resultXML: XML = XML(event.result);
-				pmp.debug("MainBox#handleCompaniesListResult:\n" + resultXML.toString());
+
 			}
 			
 			private function handleUsersListResult(event:ResultEvent):void{
 				_gotUsers = true;
 				var resultXML: XML = XML(event.result);
-				pmp.debug("MainBox#handleUsersListResult:\n" + resultXML.toString());
+
 				updateUserIdMap();
 			}
 			
 			private function handlePipsListResult(event:ResultEvent):void{
 				_gotPips = true;
 				var resultXML: XML = XML(event.result);
-				pmp.debug("MainBox#handlePipsListResult:\n" + resultXML.toString());
+
 				updatePipIdMap();
 			}
 			

@@ -17,7 +17,7 @@
 			
 			private function handleCompanyCreateResult(event:ResultEvent):void{
 				var resultXML: XML = XML(event.result);
-				pmp.debug("CompanyCreateBox#handleCompanyCreateResult\n" + resultXML.toString());
+
 				dispatchEvent(new CompanyEvent(CompanyEvent.COMPANY_CREATE, resultXML));
 			}
 			

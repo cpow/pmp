@@ -16,7 +16,7 @@
 		<![CDATA[
 			import com.pmp.components.DebugPanel;
 			import com.pmp.events.LoginEvent;
-			import com.pmp.util.DebugMessage;
+			
 			import flash.events.MouseEvent;
 			import mx.controls.Alert;
 			
@@ -43,7 +43,7 @@
 			
 			private function login(user:XML) :void {
 				_user = user;
-				debug("user = " + user);
+				
 				
 				if (user.role == "sales"){
 					mainStack.selectedChild = allBox;
@@ -56,9 +56,7 @@
 				}
 			}
 			
-			public static function debug(str:String) :void{
-				application.debugPanel.addMessage(new DebugMessage(str));
-			}
+			
 			
 		]]>
 	</mx:Script>
@@ -69,7 +67,7 @@
 		method="GET"/>
 	
 	
-	<mx:VDividedBox width="100%" height="100%">
+	
 		<mx:ViewStack id="mainStack" width="100%" height="100%">
 			<pom:SplashBox id="splashBox"
 				login="handleLogin(event)"/>	
@@ -83,6 +81,5 @@
 				logoutClick="handleLogoutClick()"/>
 			<pom:TCLBox id="tclBox" user="{_user}"/>
 		</mx:ViewStack>
-		<pom:DebugPanel id="debugPanel" width="100%" height="0%"/>
-		</mx:VDividedBox>
+		
 </mx:Application>
