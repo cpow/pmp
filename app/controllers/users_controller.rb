@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   skip_before_filter :login_required
   
+  def bin
+  redirect_to '/bin/pmp'
+  end
+  
   def getcompanies
     @user = User.find(params[:id])
     render :xml => @user.companies

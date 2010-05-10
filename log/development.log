@@ -28846,3 +28846,62 @@ Processing CompaniesController#all_companies (for 127.0.0.1 at 2010-05-08 01:16:
   [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
   [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" [0m
 Completed in 20ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/all_companies]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 15:13:24) [GET]
+Redirected to http://0.0.0.0:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 49ms (DB: 0) | 302 Found [http://0.0.0.0/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-05-10 15:13:25) [GET]
+Rendering sessions/new
+
+ActionView::TemplateError (undefined method `redirect_to_url' for #<ActionView::Base:0x19eee80>) on line #1 of app/views/sessions/new.html.erb:
+1: <%= redirect_to_url '/bin/pmp'%>
+2: 
+3: <% form_tag session_path do -%>
+4: <p><label for="login">Login</label><br/>
+
+    app/views/sessions/new.html.erb:1
+
+Rendered rescues/_trace (66.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-10 15:15:11) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-10 15:16:31) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-10 15:16:32) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-10 15:16:33) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#bin (for 127.0.0.1 at 2010-05-10 15:17:48) [GET]
+Redirected to http://0.0.0.0:3000/bin/pmp
+Completed in 1ms (DB: 0) | 302 Found [http://0.0.0.0/]
