@@ -108,23 +108,18 @@
 			}
 			
 			
+			
+			
 			public function updateSelectedCompanyFromSummaryPanel():void{
 				var selectedCompany:XML = XML(companiesGrid.selectedItem);
 				var params:Object = new Object();
 				
-				params['company[main_contact]'] = contactTI.text;
-				params['company[main_contact_email]'] = contactEmailTI.text;
-				params['company[notes]'] = notesTI.text;
-				params['company[urls]'] = urlsTI.text;	
-				params['_method'] = "PUT";
-				svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
-				svcCompaniesUpdate.send(params);
-				
-						
 				if(pipCB.selectedItem.label == "In The Works") {
-						params['_method'] = "GET";
-						svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + "/packsupdate";
-						svcCompaniesUpdate.send(params);
+						
+					params['_method'] = "GET";
+					svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + "/packsupdate";
+					svcCompaniesUpdate.send(params);
+						
 						
 						if(selectedCompany.packs == "1"){
 							params['company[pip]'] = pipCB.selectedItem.label;
@@ -137,48 +132,30 @@
 						if(selectedCompany.packs == "2"){
 							params['company[pip]'] = pipCB.selectedItem.label;
 							Alert.show("This company has one pack left, please start the upsell process soon",selectedCompany.name);
-						}
-						params['_method'] = "PUT";
-				svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
-				svcCompaniesUpdate.send(params);
-						
+						}																	
 					}
+					
 				if(pipCB.selectedItem.label == "Advocacy") {
 					Alert.show("You are putting this company into advocacy. Depending on the reason for advocacy, be sure to contact the right people.\n\n" + 
 							"For Unsatisfied Customers: Please contact Lisa\n" + 
 							"For Finance Issues: Please Contact Finance and John\n" + 
-							"If a Customer is out of scope: Please contact John",selectedCompany.name);
-							params['_method'] = "PUT";
-				svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
-				svcCompaniesUpdate.send(params);
+							"If a Customer is out of scope: Please contact John",selectedCompany.name);	
 							
-							
+							params['company[pip]'] = pipCB.selectedItem.label;	
 					}
 					
-				if(pipCB.selectedItem.label == "Upcoming") {
+				else if (pipCB.selectedItem.label != "In The Works"){
+					params['company[packs]'] = packsTI.text;	
 					params['company[pip]'] = pipCB.selectedItem.label;
-					params['_method'] = "PUT";
-				svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
-				svcCompaniesUpdate.send(params);
-				}
-				
-				if(pipCB.selectedItem.label == "Kickoff") {
-					params['company[pip]'] = pipCB.selectedItem.label;
-					params['_method'] = "PUT";
-				svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
-				svcCompaniesUpdate.send(params);
-				}
-					
-				else if(pipCB.selectedItem.label != "In The Works") {
-					params['company[packs]'] = packsTI.text;
-					params['_method'] = "PUT";
-				svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
-				svcCompaniesUpdate.send(params);
-						
 					}
 				
-				
-			
+				params['company[main_contact]'] = contactTI.text;
+				params['company[main_contact_email]'] = contactEmailTI.text;
+				params['company[notes]'] = notesTI.text;
+				params['company[urls]'] = urlsTI.text;
+				params['_method'] = "PUT";
+				svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
+				svcCompaniesUpdate.send(params);
 			}
 			
 			
@@ -291,6 +268,7 @@
 			
 			<mx:VBox width="70%" height="100%">
 			<mx:FormItem label="Place in Process">
+				<mx:TextInput id="pipTI" text="{companiesGrid.selectedItem.pip}"/>
 				<mx:ComboBox id = "pipCB" selectedItem = "{companiesGrid.selectedItem.pip}">
 				<mx:ArrayCollection>
          			<mx:Object label="Kickoff"/>

@@ -29281,3 +29281,2154 @@ Rendering template within layouts/companies
 Rendering companies/index
   [4;36;1mCompany Load (1.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
 Completed in 27ms (View: 15, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing UsersController#bin (for 127.0.0.1 at 2010-05-10 17:09:38) [GET]
+Redirected to http://0.0.0.0:3000/bin/pmp
+Completed in 1ms (DB: 0) | 302 Found [http://0.0.0.0/]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:10:24) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:10:25) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 104ms (View: 87, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:10:25) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:10:33) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "main_contact"=>"new"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:10:33) [PUT]
+  Parameters: {"company"=>{"pip"=>"Upcoming", "urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "main_contact"=>"new"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 20ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:10:33) [PUT]
+  Parameters: {"company"=>{"pip"=>"Upcoming", "urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "packs"=>"3", "main_contact"=>"new"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:10:33', "packs" = 3 WHERE "id" = 5[0m
+Completed in 17ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:10:42) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "main_contact"=>"new"}, "id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:10:42) [PUT]
+  Parameters: {"company"=>{"pip"=>"Upcoming", "urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "main_contact"=>"new"}, "id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:10:42) [PUT]
+  Parameters: {"company"=>{"pip"=>"Upcoming", "urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "packs"=>"2", "main_contact"=>"new"}, "id"=>"5"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:10:42', "packs" = 2 WHERE "id" = 5[0m
+Completed in 17ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:12:31) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:12:32) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 27ms (View: 12, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:12:32) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 18ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:12:37) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "packs"=>"13", "main_contact"=>"new"}, "id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:12:37', "packs" = 13 WHERE "id" = 5[0m
+Completed in 18ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:12:45) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "packs"=>"13", "main_contact"=>"new"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:12:45) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "packs"=>"13", "main_contact"=>"new"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 16ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:12:45) [GET]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "packs"=>"13", "main_contact"=>"new"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:12:45', "packs" = 12 WHERE "id" = 5[0m
+  [4;35;1mCompany Update (0.2ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:12:45', "packs" = 13 WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 19ms (DB: 1) | 302 Found [http://0.0.0.0/companies/5/packsupdate]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:12:45) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 28ms (View: 15, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:12:52) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "packs"=>"13", "main_contact"=>"new"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:12:52) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "packs"=>"13", "main_contact"=>"new"}, "id"=>"5"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 16ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:12:52) [GET]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "packs"=>"13", "main_contact"=>"new"}, "id"=>"5"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5) [0m
+  [4;36;1mCompany Update (0.4ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:12:52', "packs" = 12 WHERE "id" = 5[0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:12:52', "packs" = 13 WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 26ms (DB: 1) | 302 Found [http://0.0.0.0/companies/5/packsupdate]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:12:52) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 94ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:13:37) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:13:38) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 32ms (View: 17, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:13:38) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 23ms (View: 11, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:13:43) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "main_contact"=>"new", "packs"=>"13"}, "id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:13:43) [GET]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "main_contact"=>"new", "packs"=>"13"}, "id"=>"5"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5) [0m
+  [4;35;1mCompany Update (0.4ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:13:43', "packs" = 12 WHERE "id" = 5[0m
+  [4;36;1mCompany Update (0.2ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:13:43', "packs" = 13 WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 19ms (DB: 1) | 302 Found [http://0.0.0.0/companies/5/packsupdate]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:13:43) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "main_contact"=>"new", "packs"=>"13"}, "id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:13:43) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 23ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:13:50) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "main_contact"=>"new", "packs"=>"13"}, "id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:13:50', "pip" = 'Kickoff' WHERE "id" = 5[0m
+Completed in 18ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:13:50) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "main_contact"=>"new", "packs"=>"13"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 14ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:13:53) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "main_contact"=>"new", "packs"=>"13"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:13:53) [GET]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "main_contact"=>"new", "packs"=>"13"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:13:53', "packs" = 12 WHERE "id" = 5[0m
+  [4;35;1mCompany Update (0.5ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:13:53', "packs" = 13 WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 20ms (DB: 1) | 302 Found [http://0.0.0.0/companies/5/packsupdate]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:13:53) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "main_contact"=>"new", "packs"=>"13"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 76ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:13:53) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 23ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:14:07) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:14:08) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 22ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:14:08) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:14:12) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "main_contact"=>"new", "packs"=>"13"}, "id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:14:13) [GET]
+  Parameters: {"company"=>{"urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "main_contact"=>"new", "packs"=>"13"}, "id"=>"5"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:14:13', "packs" = 12 WHERE "id" = 5[0m
+  [4;36;1mCompany Update (0.2ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:14:13', "packs" = 13 WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 81ms (DB: 1) | 302 Found [http://0.0.0.0/companies/5/packsupdate]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:14:13) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "main_contact"=>"new", "packs"=>"13"}, "id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:14:13) [GET]
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 30ms (View: 16, DB: 2) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:21:56) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:21:57) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 25ms (View: 11, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:21:57) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:22:03) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "packs"=>"13", "main_contact"=>"new"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 65ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:22:03) [GET]
+  Parameters: {"company"=>{"urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "packs"=>"13", "main_contact"=>"new"}, "id"=>"5"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5) [0m
+  [4;36;1mCompany Update (0.4ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:22:03', "packs" = 12 WHERE "id" = 5[0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:22:03', "packs" = 13 WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 24ms (DB: 1) | 302 Found [http://0.0.0.0/companies/5/packsupdate]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:22:03) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "packs"=>"13", "main_contact"=>"new"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:22:03) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:22:09) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "packs"=>"13", "main_contact"=>"new"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:22:09) [GET]
+  Parameters: {"company"=>{"urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "packs"=>"13", "main_contact"=>"new"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:22:09', "packs" = 12 WHERE "id" = 5[0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:22:09', "packs" = 13 WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 20ms (DB: 1) | 302 Found [http://0.0.0.0/companies/5/packsupdate]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:22:09) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "packs"=>"13", "main_contact"=>"new"}, "id"=>"5"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 80ms (View: 59, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:22:09) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 23ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:29:48) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:29:49) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.8ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 28ms (View: 15, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:29:49) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 22ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:29:54) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "packs"=>"13", "main_contact"=>"new"}, "id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 16ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:29:54) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "packs"=>"13", "main_contact"=>"new"}, "id"=>"5"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 80ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:29:54) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:29:54', "packs" = 12 WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 18ms (DB: 1) | 302 Found [http://0.0.0.0/companies/5/packsupdate]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:29:54) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 28ms (View: 16, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:30:29) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:30:29) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.8ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 25ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:30:30) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:30:34) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "main_contact"=>"new", "packs"=>"12"}, "id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 65ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:30:34) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:30:34', "packs" = 11 WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 15ms (DB: 1) | 302 Found [http://0.0.0.0/companies/5/packsupdate]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:30:34) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:30:44) [PUT]
+  Parameters: {"company"=>{"pip"=>"Upcoming", "urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "packs"=>"12", "main_contact"=>"new"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:30:44', "pip" = 'Upcoming', "packs" = 12 WHERE "id" = 5[0m
+Completed in 16ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:30:44) [PUT]
+  Parameters: {"company"=>{"pip"=>"Upcoming", "urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "packs"=>"12", "main_contact"=>"new"}, "id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 16ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:32:57) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:32:57) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 104ms (View: 11, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:32:58) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:33:02) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "packs"=>"12", "main_contact"=>"new"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:33:03) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:33:03', "packs" = 11 WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 17ms (DB: 1) | 302 Found [http://0.0.0.0/companies/5/packsupdate]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:33:03) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:33:08) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "packs"=>"12", "main_contact"=>"new"}, "id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:33:08', "packs" = 12 WHERE "id" = 5[0m
+Completed in 18ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:33:08) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5) [0m
+  [4;36;1mCompany Update (0.4ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:33:08', "packs" = 11 WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 69ms (DB: 1) | 302 Found [http://0.0.0.0/companies/5/packsupdate]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:33:08) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 23ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:33:11) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "packs"=>"12", "main_contact"=>"new"}, "id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:33:11', "pip" = 'Kickoff', "packs" = 12 WHERE "id" = 5[0m
+Completed in 19ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:33:14) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "packs"=>"12", "main_contact"=>"new"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:33:15) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:33:15', "packs" = 11 WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 20ms (DB: 1) | 302 Found [http://0.0.0.0/companies/5/packsupdate]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:33:15) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 24ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:33:56) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 61ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:33:56) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 23ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:33:56) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:34:15) [GET]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "main_contact"=>"new", "packs"=>"11"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:34:15', "packs" = 10 WHERE "id" = 5[0m
+  [4;35;1mCompany Update (0.2ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:34:15', "packs" = 11 WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 17ms (DB: 1) | 302 Found [http://0.0.0.0/companies/5/packsupdate]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:34:15) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:34:15) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "main_contact"=>"new", "packs"=>"11"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:34:20) [GET]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "main_contact"=>"new", "packs"=>"11"}, "id"=>"5"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:34:20', "packs" = 10 WHERE "id" = 5[0m
+  [4;35;1mCompany Update (0.2ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:34:20', "packs" = 11 WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 21ms (DB: 1) | 302 Found [http://0.0.0.0/companies/5/packsupdate]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:34:20) [PUT]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "main_contact"=>"new", "packs"=>"11"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:34:20) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 23ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:40:08) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:40:08) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 27ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:40:08) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 21ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:40:14) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:40:14', "packs" = 10 WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 67ms (DB: 1) | 302 Found [http://0.0.0.0/companies/5/packsupdate]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:40:14) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 23ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:40:14) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "main_contact"=>"new", "packs"=>"11"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:40:14', "pip" = 'In The Works', "packs" = 11 WHERE "id" = 5[0m
+Completed in 18ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:40:19) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "main_contact"=>"new", "packs"=>"11"}, "id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:40:19', "pip" = 'Kickoff' WHERE "id" = 5[0m
+Completed in 19ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:40:22) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:40:22', "packs" = 10 WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 18ms (DB: 1) | 302 Found [http://0.0.0.0/companies/5/packsupdate]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:40:22) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "main_contact"=>"new", "packs"=>"11"}, "id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+  [4;35;1mCompany Update (0.2ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:40:22', "pip" = 'In The Works', "packs" = 11 WHERE "id" = 5[0m
+Completed in 17ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:40:22) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 26ms (View: 15, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:41:33) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "main_contact"=>"new", "packs"=>"11"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:41:33', "pip" = 'Kickoff' WHERE "id" = 5[0m
+Completed in 20ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:41:36) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:41:36', "packs" = 10 WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 18ms (DB: 1) | 302 Found [http://0.0.0.0/companies/5/packsupdate]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:41:37) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "main_contact"=>"new", "packs"=>"11"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:41:37', "pip" = 'In The Works', "packs" = 11 WHERE "id" = 5[0m
+Completed in 17ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:41:37) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 28ms (View: 16, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:43:43) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:43:44) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 27ms (View: 14, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:43:44) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:43:48) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "main_contact"=>"new", "packs"=>"11"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:43:48', "pip" = 'Kickoff' WHERE "id" = 5[0m
+Completed in 144ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:43:51) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "main_contact"=>"new", "packs"=>"11"}, "id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+  [4;35;1mCompany Update (0.2ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:43:51', "pip" = 'In The Works' WHERE "id" = 5[0m
+Completed in 18ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:43:51) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5) [0m
+  [4;36;1mCompany Update (0.2ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:43:51', "packs" = 10 WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 16ms (DB: 1) | 302 Found [http://0.0.0.0/companies/5/packsupdate]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:43:51) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 25ms (View: 14, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:43:54) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "main_contact"=>"new", "packs"=>"11"}, "id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:43:54', "pip" = 'Kickoff', "packs" = 11 WHERE "id" = 5[0m
+Completed in 18ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:44:16) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:44:17) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 37ms (View: 17, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:44:17) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:44:23) [GET]
+  Parameters: {"company"=>{"urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "packs"=>"11", "main_contact"=>"new"}, "id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:44:23', "packs" = 10 WHERE "id" = 5[0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:44:23', "packs" = 11 WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 20ms (DB: 1) | 302 Found [http://0.0.0.0/companies/5/packsupdate]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:44:23) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:44:23) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"", "main_contact_email"=>"new", "notes"=>"something else", "main_contact"=>"new", "packs"=>"11"}, "id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:44:23', "pip" = 'In The Works' WHERE "id" = 5[0m
+Completed in 17ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:45:32) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:45:32) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (4.8ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 28ms (View: 11, DB: 5) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:45:32) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 26ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:45:36) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "packs"=>"11", "main_contact"=>"new"}, "id"=>"5"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:45:36', "pip" = 'Kickoff' WHERE "id" = 5[0m
+Completed in 17ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:45:40) [GET]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "packs"=>"11", "main_contact"=>"new"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:45:40', "packs" = 10 WHERE "id" = 5[0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:45:40', "pip" = 'In The Works', "packs" = 11 WHERE "id" = 5[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 20ms (DB: 1) | 302 Found [http://0.0.0.0/companies/5/packsupdate]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:45:40) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"", "notes"=>"something else", "main_contact_email"=>"new", "packs"=>"11", "main_contact"=>"new"}, "id"=>"5"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 5 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/5.xml]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:45:40) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 23ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:45:48) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "packs"=>"5", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:45:48', "pip" = 'Kickoff', "packs" = 5 WHERE "id" = 2[0m
+Completed in 19ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:45:54) [GET]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "packs"=>"5", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2) [0m
+  [4;35;1mCompany Update (0.2ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:45:54', "packs" = 4 WHERE "id" = 2[0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:45:54', "pip" = 'In The Works', "packs" = 5 WHERE "id" = 2[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 19ms (DB: 1) | 302 Found [http://0.0.0.0/companies/2/packsupdate]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:45:54) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "packs"=>"5", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:45:54) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 28ms (View: 16, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:47:26) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:47:26) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 27ms (View: 11, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:47:26) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:47:33) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"no URLs right now", "main_contact_email"=>"herry@vlingo.com", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "packs"=>"5", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:47:33', "pip" = 'Kickoff' WHERE "id" = 2[0m
+Completed in 22ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:47:36) [GET]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "main_contact_email"=>"herry@vlingo.com", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "packs"=>"5", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:47:36', "packs" = 4 WHERE "id" = 2[0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:47:36', "pip" = 'In The Works', "packs" = 5 WHERE "id" = 2[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 19ms (DB: 1) | 302 Found [http://0.0.0.0/companies/2/packsupdate]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:47:36) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "main_contact_email"=>"herry@vlingo.com", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "packs"=>"5", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:47:36) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "main_contact_email"=>"herry@vlingo.com", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "packs"=>"5", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:47:36) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 26ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:48:26) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:48:27) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 24ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:48:27) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:48:32) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "packs"=>"5", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:48:32', "packs" = 4 WHERE "id" = 2[0m
+  [4;35;1mCompany Update (0.2ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:48:32', "packs" = 5 WHERE "id" = 2[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 17ms (DB: 1) | 302 Found [http://0.0.0.0/companies/2/packsupdate]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:48:32) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:48:32) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "packs"=>"5", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:48:32) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "packs"=>"5", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:48:35) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "packs"=>"5", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:48:35', "pip" = 'Kickoff' WHERE "id" = 2[0m
+Completed in 19ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:48:38) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "packs"=>"5", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2) [0m
+  [4;35;1mCompany Update (0.4ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:48:38', "packs" = 4 WHERE "id" = 2[0m
+  [4;36;1mCompany Update (0.5ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:48:38', "pip" = 'In The Works', "packs" = 5 WHERE "id" = 2[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 19ms (DB: 1) | 302 Found [http://0.0.0.0/companies/2/packsupdate]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:48:38) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "packs"=>"5", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:48:38) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "packs"=>"5", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+Completed in 18ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:48:38) [GET]
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 100ms (View: 15, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing UsersController#bin (for 127.0.0.1 at 2010-05-10 17:48:55) [GET]
+Redirected to http://0.0.0.0:3000/bin/pmp
+Completed in 1ms (DB: 0) | 302 Found [http://0.0.0.0/]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:48:59) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:49:00) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 23ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:49:00) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 18ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:49:04) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "main_contact"=>"Jerry", "packs"=>"5"}, "id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:49:04', "pip" = 'Kickoff' WHERE "id" = 2[0m
+Completed in 18ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:49:07) [GET]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "main_contact"=>"Jerry", "packs"=>"5"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.4ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2) [0m
+  [4;35;1mCompany Update (0.4ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:49:07', "packs" = 4 WHERE "id" = 2[0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:49:07', "pip" = 'In The Works', "packs" = 5 WHERE "id" = 2[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 69ms (DB: 1) | 302 Found [http://0.0.0.0/companies/2/packsupdate]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:49:07) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "main_contact"=>"Jerry", "packs"=>"5"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:49:07) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "main_contact"=>"Jerry", "packs"=>"5"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+Completed in 16ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:49:07) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 24ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:50:59) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:50:59) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.9ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 29ms (View: 17, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:50:59) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 75ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:51:03) [GET]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "packs"=>"5", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:51:03', "packs" = 4 WHERE "id" = 2[0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:51:03', "packs" = 5 WHERE "id" = 2[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 17ms (DB: 1) | 302 Found [http://0.0.0.0/companies/2/packsupdate]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:51:03) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 23ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:51:04) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "packs"=>"5", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:52:16) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:52:16) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 23ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:52:16) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 73ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:52:21) [GET]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:52:21', "packs" = 4 WHERE "id" = 2[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 18ms (DB: 1) | 302 Found [http://0.0.0.0/companies/2/packsupdate]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:52:21) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 23ms (View: 14, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:52:21) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+Completed in 16ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:52:46) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:52:46) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 39ms (View: 23, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:52:47) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:53:00) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "main_contact"=>"Jerry", "packs"=>"4"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:53:00', "pip" = 'Kickoff' WHERE "id" = 2[0m
+Completed in 20ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:53:04) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "main_contact"=>"Jerry", "packs"=>"3"}, "id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.2ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:53:04', "packs" = 3 WHERE "id" = 2[0m
+Completed in 18ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:53:08) [GET]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2) [0m
+  [4;35;1mCompany Update (0.2ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:53:08', "packs" = 2 WHERE "id" = 2[0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:53:08', "pip" = 'In The Works' WHERE "id" = 2[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 19ms (DB: 1) | 302 Found [http://0.0.0.0/companies/2/packsupdate]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:53:08) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "main_contact"=>"Jerry", "packs"=>"3"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:53:08', "packs" = 3 WHERE "id" = 2[0m
+Completed in 18ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:53:08) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:53:57) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:53:57) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (3.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 29ms (View: 15, DB: 3) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:53:57) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 22ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:54:02) [GET]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:54:02', "packs" = 2 WHERE "id" = 2[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 15ms (DB: 1) | 302 Found [http://0.0.0.0/companies/2/packsupdate]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:54:02) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 23ms (View: 14, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:54:04) [GET]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:54:04', "packs" = 1 WHERE "id" = 2[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 17ms (DB: 1) | 302 Found [http://0.0.0.0/companies/2/packsupdate]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:54:04) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 78ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:54:32) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "packs"=>"3", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:54:32', "pip" = 'Kickoff', "packs" = 3 WHERE "id" = 2[0m
+Completed in 19ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:54:35) [GET]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:54:35', "packs" = 2 WHERE "id" = 2[0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:54:35', "pip" = 'In The Works' WHERE "id" = 2[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 20ms (DB: 1) | 302 Found [http://0.0.0.0/companies/2/packsupdate]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:54:35) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 23ms (View: 14, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:55:15) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:55:15) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 28ms (View: 11, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:55:15) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:55:22) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"no URLs right now", "main_contact_email"=>"herry@vlingo.com", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact"=>"Jerry", "packs"=>"2"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:55:22', "pip" = 'Kickoff' WHERE "id" = 2[0m
+Completed in 19ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:55:26) [GET]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "main_contact_email"=>"herry@vlingo.com", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.4ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:55:26', "packs" = 1 WHERE "id" = 2[0m
+  [4;35;1mCompany Update (0.4ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:55:26', "pip" = 'In The Works' WHERE "id" = 2[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 24ms (DB: 1) | 302 Found [http://0.0.0.0/companies/2/packsupdate]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:55:26) [GET]
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 31ms (View: 16, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:55:37) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:55:37) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (1.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 28ms (View: 13, DB: 2) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:55:37) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:58:29) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 0, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:58:30) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 24ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:58:30) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:58:35) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"staging.friendconnect.google.com/friendconnect", "notes"=>"This company is pretty awesome right now something", "main_contact_email"=>"jmarantz@google.com", "packs"=>"0", "main_contact"=>"Josh Marantz"}, "id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:58:35', "pip" = 'Kickoff' WHERE "id" = 1[0m
+Completed in 17ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/1.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:58:39) [GET]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"staging.friendconnect.google.com/friendconnect", "notes"=>"This company is pretty awesome right now something", "main_contact_email"=>"jmarantz@google.com", "main_contact"=>"Josh Marantz"}, "id"=>"1"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Completed in 16ms (View: 1, DB: 1) | 200 OK [http://0.0.0.0/companies/1/packsupdate]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:58:39) [PUT]
+  Parameters: {"company"=>{"pip"=>"Advocacy", "urls"=>"staging.friendconnect.google.com/friendconnect", "notes"=>"This company is pretty awesome right now something", "main_contact_email"=>"jmarantz@google.com", "main_contact"=>"Josh Marantz"}, "id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.8ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1 AND ("companies".user_id = 3)) [0m
+  [4;35;1mCompany Update (0.5ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:58:39', "pip" = 'Advocacy' WHERE "id" = 1[0m
+Completed in 26ms (View: 3, DB: 2) | 200 OK [http://0.0.0.0/companies/1.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:58:46) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "packs"=>"1", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.5ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:58:46', "pip" = 'Kickoff' WHERE "id" = 2[0m
+Completed in 19ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 17:58:49) [GET]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2) [0m
+  [4;35;1mCompany Update (0.7ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 21:58:49', "packs" = 0 WHERE "id" = 2[0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 21:58:49', "pip" = 'In The Works' WHERE "id" = 2[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 25ms (DB: 2) | 302 Found [http://0.0.0.0/companies/2/packsupdate]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 17:58:49) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.4ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+Completed in 28ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 17:58:49) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 27ms (View: 14, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 17:59:51) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 59ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:59:51) [GET]
+  [4;36;1mUser Load (2.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 32ms (View: 12, DB: 3) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 17:59:52) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 20ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:00:24) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:00:25) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (2.0ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 36ms (View: 22, DB: 2) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:00:25) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:01:44) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:01:44) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 25ms (View: 12, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:01:44) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 18:01:51) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"no URLs right now", "main_contact_email"=>"herry@vlingo.com", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "packs"=>"3", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 22:01:51', "pip" = 'Kickoff', "packs" = 3 WHERE "id" = 2[0m
+Completed in 20ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 18:01:51) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"no URLs right now", "main_contact_email"=>"herry@vlingo.com", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "packs"=>"3", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+Completed in 18ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 18:07:30) [GET]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "main_contact_email"=>"herry@vlingo.com", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 22:07:30', "packs" = 2 WHERE "id" = 2[0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 22:07:30', "pip" = 'In The Works' WHERE "id" = 2[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 17ms (DB: 1) | 302 Found [http://0.0.0.0/companies/2/packsupdate]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 18:07:30) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "main_contact_email"=>"herry@vlingo.com", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+Completed in 70ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 18:07:30) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "main_contact_email"=>"herry@vlingo.com", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 18:07:31) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 26ms (View: 14, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:07:51) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:07:51) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 27ms (View: 12, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:07:51) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 18:08:02) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"no URLs right now", "main_contact_email"=>"herry@vlingo.com", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "packs"=>"2", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 22:08:02', "pip" = 'Kickoff' WHERE "id" = 2[0m
+Completed in 19ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 18:08:02) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"no URLs right now", "main_contact_email"=>"herry@vlingo.com", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "packs"=>"2", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.4ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+Completed in 25ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 18:08:05) [GET]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "main_contact_email"=>"herry@vlingo.com", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2) [0m
+  [4;35;1mCompany Update (0.4ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 22:08:05', "packs" = 1 WHERE "id" = 2[0m
+  [4;36;1mCompany Update (0.4ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 22:08:05', "pip" = 'In The Works' WHERE "id" = 2[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 24ms (DB: 2) | 302 Found [http://0.0.0.0/companies/2/packsupdate]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 18:08:05) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "main_contact_email"=>"herry@vlingo.com", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+Completed in 25ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 18:08:05) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "main_contact_email"=>"herry@vlingo.com", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+Completed in 19ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 18:08:05) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 26ms (View: 15, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 18:11:51) [PUT]
+  Parameters: {"company"=>{"pip"=>"Advocacy", "urls"=>"no URLs right now", "main_contact_email"=>"herry@vlingo.com", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (1.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+  [4;35;1mCompany Update (0.4ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 22:11:51', "pip" = 'Advocacy' WHERE "id" = 2[0m
+Completed in 91ms (View: 2, DB: 2) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:12:16) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:12:16) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.8ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 31ms (View: 14, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:12:16) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 18:12:20) [GET]
+  Parameters: {"company"=>{"urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2) [0m
+  [4;35;1mCompany Update (0.5ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 22:12:20', "packs" = 0 WHERE "id" = 2[0m
+Redirected to http://0.0.0.0:3000/companies
+Completed in 19ms (DB: 1) | 302 Found [http://0.0.0.0/companies/2/packsupdate]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-05-10 18:12:20) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mCompany Load (1.1ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 44ms (View: 21, DB: 1) | 200 OK [http://0.0.0.0/companies]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 18:12:21) [PUT]
+  Parameters: {"company"=>{"pip"=>"In The Works", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 22:12:21', "pip" = 'In The Works' WHERE "id" = 2[0m
+Completed in 75ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:12:43) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:12:44) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 25ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:12:44) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 18:12:51) [GET]
+  Parameters: {"company"=>{"urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2) [0m
+Completed in 16ms (View: 1, DB: 1) | 200 OK [http://0.0.0.0/companies/2/packsupdate]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 18:12:51) [PUT]
+  Parameters: {"company"=>{"pip"=>"Advocacy", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 22:12:51', "pip" = 'Advocacy' WHERE "id" = 2[0m
+Completed in 25ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:14:11) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:14:11) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.9ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 27ms (View: 11, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:14:11) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 18:14:19) [PUT]
+  Parameters: {"company"=>{"urls"=>"no URLs right now", "main_contact_email"=>"herry@vlingo.com", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact"=>"Jerry", "packs"=>"2"}, "id"=>"2"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 22:14:19', "packs" = 2 WHERE "id" = 2[0m
+Completed in 19ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 18:14:23) [PUT]
+  Parameters: {"company"=>{"urls"=>"no URLs right now", "main_contact_email"=>"herry@vlingo.com", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact"=>"Jerry", "packs"=>"2"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:15:10) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:15:10) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 32ms (View: 15, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:15:11) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 23ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 18:15:16) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha", "main_contact_email"=>"herry@vlingo.com", "packs"=>"2", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 22:15:16', "pip" = 'Kickoff' WHERE "id" = 2[0m
+Completed in 21ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 18:15:49) [PUT]
+  Parameters: {"company"=>{"pip"=>"Upcoming", "urls"=>"no URLs right now", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha sdfdffdfdg", "main_contact_email"=>"herry@vlingo.com", "packs"=>"2", "main_contact"=>"Jerry"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 22:15:49', "pip" = 'Upcoming', "notes" = 'Vlingo is testing a mobile app and they require a lot of work. haha sdfdffdfdg' WHERE "id" = 2[0m
+Completed in 19ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:16:19) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:16:20) [GET]
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 40ms (View: 22, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:16:20) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 18:16:34) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"no URLs right now", "main_contact_email"=>"herry@vlingo.com", "notes"=>"Vlingo is testing a mobile app and they require a lot of work. haha\r\r\r sdfdffdfdg", "main_contact"=>"Jerry", "packs"=>"2"}, "id"=>"2"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2 AND ("companies".user_id = 3)) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 22:16:34', "pip" = 'Kickoff', "notes" = 'Vlingo is testing a mobile app and they require a lot of work. haha sdfdffdfdg' WHERE "id" = 2[0m
+Completed in 19ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/2.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:19:22) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 13ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:19:23) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (1.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 32ms (View: 12, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:19:23) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 67ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:23:47) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:23:47) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 31ms (View: 11, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:23:47) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:39:25) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:39:26) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 29ms (View: 15, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:39:26) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:39:44) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 11ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:39:44) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 24ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:39:44) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:41:39) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:41:39) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 28ms (View: 12, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:41:39) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:46:40) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:46:41) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (2.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 27ms (View: 10, DB: 3) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:46:41) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 22ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:47:30) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:47:30) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 24ms (View: 11, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:47:30) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:48:14) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:48:14) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 27ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:48:14) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 23ms (View: 11, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:49:00) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:49:00) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 32ms (View: 15, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:49:00) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 21ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 18:49:06) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"staging.friendconnect.google.com/friendconnect", "main_contact_email"=>"jmarantz@google.com", "notes"=>"This company is pretty awesome right now something", "main_contact"=>"Josh Marantz", "packs"=>"0"}, "id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1 AND ("companies".user_id = 3)) [0m
+  [4;35;1mCompany Update (0.3ms)[0m   [0mUPDATE "companies" SET "updated_at" = '2010-05-10 22:49:06', "pip" = 'Kickoff' WHERE "id" = 1[0m
+Completed in 19ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/1.xml]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 18:49:11) [PUT]
+  Parameters: {"company"=>{"pip"=>"Kickoff", "urls"=>"staging.friendconnect.google.com/friendconnect", "main_contact_email"=>"jmarantz@google.com", "notes"=>"This company is pretty awesome right now something dfdfgdfg", "main_contact"=>"Josh Marantz", "packs"=>"0"}, "id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.3ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 22:49:11', "notes" = 'This company is pretty awesome right now something dfdfgdfg' WHERE "id" = 1[0m
+Completed in 19ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/companies/1.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:50:21) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 57ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:50:21) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 30ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:50:21) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:51:22) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:51:23) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 26ms (View: 14, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:51:23) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:55:53) [POST]
+  Parameters: {"password"=>"test", "login"=>"cpow85"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 11ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:55:53) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.8ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 27ms (View: 11, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:55:53) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:56:13) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:56:13) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (1.8ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 29ms (View: 11, DB: 2) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:56:13) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mCompany Load (49.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 68ms (View: 9, DB: 50) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing SessionsController#create to xml (for 127.0.0.1 at 2010-05-10 18:56:30) [POST]
+  Parameters: {"login"=>"cpow85", "password"=>"test"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'cpow85') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:56:31) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 26ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#index to xml (for 127.0.0.1 at 2010-05-10 18:56:31) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies".user_id = 3) [0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/companies.xml]
+
+
+Processing CompaniesController#packsupdate (for 127.0.0.1 at 2010-05-10 18:56:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Completed in 15ms (View: 1, DB: 1) | 200 OK [http://0.0.0.0/companies/1/packsupdate]
+
+
+Processing CompaniesController#update to xml (for 127.0.0.1 at 2010-05-10 18:56:38) [PUT]
+  Parameters: {"company"=>{"pip"=>"Advocacy", "urls"=>"staging.friendconnect.google.com/friendconnect", "main_contact_email"=>"jmarantz@google.com", "notes"=>"This company is pretty awesome right now something dfdfgdfg", "main_contact"=>"Josh Marantz"}, "id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1 AND ("companies".user_id = 3)) [0m
+  [4;36;1mCompany Update (0.4ms)[0m   [0;1mUPDATE "companies" SET "updated_at" = '2010-05-10 22:56:38', "pip" = 'Advocacy' WHERE "id" = 1[0m
+Completed in 23ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/companies/1.xml]
