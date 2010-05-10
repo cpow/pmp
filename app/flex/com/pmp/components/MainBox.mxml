@@ -111,11 +111,15 @@
 			public function updateSelectedCompanyFromSummaryPanel():void{
 				var selectedCompany:XML = XML(companiesGrid.selectedItem);
 				var params:Object = new Object();
+				
 				params['company[main_contact]'] = contactTI.text;
 				params['company[main_contact_email]'] = contactEmailTI.text;
 				params['company[notes]'] = notesTI.text;
 				params['company[urls]'] = urlsTI.text;	
-				params['company[pip]'] = pipCB.selectedItem.label;
+				params['_method'] = "PUT";
+				svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
+				svcCompaniesUpdate.send(params);
+				
 						
 				if(pipCB.selectedItem.label == "In The Works") {
 						params['_method'] = "GET";
@@ -123,6 +127,7 @@
 						svcCompaniesUpdate.send(params);
 						
 						if(selectedCompany.packs == "1"){
+							params['company[pip]'] = pipCB.selectedItem.label;
 							Alert.show("This company has zero packs left, please start the upsell process",selectedCompany.name());
 						}
 						if(selectedCompany.packs == "0"){
@@ -130,11 +135,12 @@
 							Alert.show("This company has zero packs. You cannot create another Test Cycle for this company. Please contact sales and/or finance.",selectedCompany.name());
 						}
 						if(selectedCompany.packs == "2"){
+							params['company[pip]'] = pipCB.selectedItem.label;
 							Alert.show("This company has one pack left, please start the upsell process soon",selectedCompany.name);
 						}
 						params['_method'] = "PUT";
-						svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
-						svcCompaniesUpdate.send(params);
+				svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
+				svcCompaniesUpdate.send(params);
 						
 					}
 				if(pipCB.selectedItem.label == "Advocacy") {
@@ -142,22 +148,41 @@
 							"For Unsatisfied Customers: Please contact Lisa\n" + 
 							"For Finance Issues: Please Contact Finance and John\n" + 
 							"If a Customer is out of scope: Please contact John",selectedCompany.name);
-							
 							params['_method'] = "PUT";
-							svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
-							svcCompaniesUpdate.send(params);
+				svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
+				svcCompaniesUpdate.send(params);
+							
+							
 					}
 					
-					else if(pipCB.selectedItem.label != "In The Works") {
-						params['company[packs]'] = packsTI.text;
-						params['_method'] = "PUT";
-						svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
-						svcCompaniesUpdate.send(params);
+				if(pipCB.selectedItem.label == "Upcoming") {
+					params['company[pip]'] = pipCB.selectedItem.label;
+					params['_method'] = "PUT";
+				svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
+				svcCompaniesUpdate.send(params);
+				}
+				
+				if(pipCB.selectedItem.label == "Kickoff") {
+					params['company[pip]'] = pipCB.selectedItem.label;
+					params['_method'] = "PUT";
+				svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
+				svcCompaniesUpdate.send(params);
+				}
+					
+				else if(pipCB.selectedItem.label != "In The Works") {
+					params['company[packs]'] = packsTI.text;
+					params['_method'] = "PUT";
+				svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
+				svcCompaniesUpdate.send(params);
 						
-						}
+					}
+				
 				
 			
 			}
+			
+			
+			
 			
 			public function getPip(pip_id:int):XML{
 				return _pipIdMap[pip_id];
