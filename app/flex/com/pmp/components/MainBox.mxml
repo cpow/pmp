@@ -122,7 +122,7 @@
 						
 						
 						if(selectedCompany.packs == "1"){
-							params['company[pip]'] = pipCB.selectedItem.label;
+							
 							Alert.show("This company has zero packs left, please start the upsell process",selectedCompany.name());
 						}
 						if(selectedCompany.packs == "0"){
@@ -130,7 +130,7 @@
 							Alert.show("This company has zero packs. You cannot create another Test Cycle for this company. Please contact sales and/or finance.",selectedCompany.name());
 						}
 						if(selectedCompany.packs == "2"){
-							params['company[pip]'] = pipCB.selectedItem.label;
+							
 							Alert.show("This company has one pack left, please start the upsell process soon",selectedCompany.name);
 						}																	
 					}
@@ -141,14 +141,15 @@
 							"For Finance Issues: Please Contact Finance and John\n" + 
 							"If a Customer is out of scope: Please contact John",selectedCompany.name);	
 							
-							params['company[pip]'] = pipCB.selectedItem.label;	
+								
 					}
 					
 				else if (pipCB.selectedItem.label != "In The Works"){
 					params['company[packs]'] = packsTI.text;	
-					params['company[pip]'] = pipCB.selectedItem.label;
+					
 					}
 				
+				params['company[pip]'] = pipCB.selectedItem.label;
 				params['company[main_contact]'] = contactTI.text;
 				params['company[main_contact_email]'] = contactEmailTI.text;
 				params['company[notes]'] = notesTI.text;
