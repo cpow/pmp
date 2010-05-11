@@ -114,6 +114,44 @@
 				var selectedCompany:XML = XML(companiesGrid.selectedItem);
 				var params:Object = new Object();
 				
+				params['company[main_contact]'] = contactTI.text;
+				params['company[main_contact_email]'] = contactEmailTI.text;
+				params['company[notes]'] = notesTI.text;
+				params['company[urls]'] = urlsTI.text;
+				params['company[packs]'] = packsTI.text;
+				params['_method'] = "PUT";
+				svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
+				svcCompaniesUpdate.send(params);
+			}
+			
+			
+			
+			
+			public function getPip(pip_id:int):XML{
+				return _pipIdMap[pip_id];
+			}
+			
+			public function getUser(user_id:int):XML{
+				return _userIdMap[user_id];
+			}
+			
+			
+			private function handleCompaniesUpdateResult(event:ResultEvent):void {
+				var newCompany:XML = XML(event.result);
+				for (var i:int = 0; i< companiesXLC.length; i++) {
+					var ithCompany:XML = XML(companiesXLC.getItemAt(i));
+					if (ithCompany.id == newCompany.id) {
+						companiesXLC.setItemAt(newCompany, i);
+						break;
+					}
+				}
+			}
+			
+			
+			public function updatePip():void {
+				var selectedCompany:XML = XML(companiesGrid.selectedItem);
+				var params:Object = new Object();
+				
 				if(pipCB.selectedItem.label == "In The Works") {
 						
 					params['_method'] = "GET";
@@ -150,39 +188,10 @@
 					}
 				
 				params['company[pip]'] = pipCB.selectedItem.label;
-				params['company[main_contact]'] = contactTI.text;
-				params['company[main_contact_email]'] = contactEmailTI.text;
-				params['company[notes]'] = notesTI.text;
-				params['company[urls]'] = urlsTI.text;
 				params['_method'] = "PUT";
 				svcCompaniesUpdate.url = "/companies/" + selectedCompany.id + ".xml";
 				svcCompaniesUpdate.send(params);
 			}
-			
-			
-			
-			
-			public function getPip(pip_id:int):XML{
-				return _pipIdMap[pip_id];
-			}
-			
-			public function getUser(user_id:int):XML{
-				return _userIdMap[user_id];
-			}
-			
-			
-			private function handleCompaniesUpdateResult(event:ResultEvent):void {
-				var newCompany:XML = XML(event.result);
-				for (var i:int = 0; i< companiesXLC.length; i++) {
-					var ithCompany:XML = XML(companiesXLC.getItemAt(i));
-					if (ithCompany.id == newCompany.id) {
-						companiesXLC.setItemAt(newCompany, i);
-						break;
-					}
-				}
-			}
-			
-			
 			
 			
 		]]>
@@ -268,21 +277,25 @@
 			
 			
 			<mx:VBox width="70%" height="100%">
-			<mx:FormItem label="Place in Process">
-				<mx:TextInput id="pipTI" text="{companiesGrid.selectedItem.pip}"/>
+			<mx:HBox width="100%" height="25" verticalAlign="middle">
+				
+			
+				<mx:Text text="PiP: "/>
 				<mx:ComboBox id = "pipCB">
 				<mx:ArrayCollection>
-					<mx:Object label="{companiesGrid.selectedItem.pip}"/>
          			<mx:Object label="Kickoff"/>
          			<mx:Object label="In The Works"/>
          			<mx:Object label="Upcoming"/>
          			<mx:Object label="Advocacy"/>
       			</mx:ArrayCollection>
 			</mx:ComboBox>
-			</mx:FormItem>
+			<mx:Button id="updatePipButton" label="Update Pip" click="updatePip()"/>
+			
+			
+			</mx:HBox>
 			
 				<mx:Label text="Notes"/>
-				<mx:TextArea id="notesTI" width="100%" height="100%" text="{companiesGrid.selectedItem.notes}"/>
+				<mx:TextArea id="notesTI" width="100%" height="150" text="{companiesGrid.selectedItem.notes}"/>
 			
 			
 			</mx:VBox>	
