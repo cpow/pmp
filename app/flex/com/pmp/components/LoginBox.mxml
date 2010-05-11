@@ -40,10 +40,10 @@
 	
 	<mx:Form labelWidth="150">
 		<mx:FormItem required="true" label="Username">
-			<mx:TextInput id="loginTI"/>
+			<mx:TextInput id="loginTI" enter="login()"/>
 		</mx:FormItem>
 		<mx:FormItem required="true" label="Passowrd">
-			<mx:TextInput id="passwordTI" displayAsPassword="true"/>
+			<mx:TextInput id="passwordTI" displayAsPassword="true" enter="login()"/>
 		</mx:FormItem>
 		<mx:FormItem>
 			<mx:Button id="loginButton" label="Login" click="login()"/>

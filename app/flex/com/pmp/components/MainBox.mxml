@@ -270,8 +270,9 @@
 			<mx:VBox width="70%" height="100%">
 			<mx:FormItem label="Place in Process">
 				<mx:TextInput id="pipTI" text="{companiesGrid.selectedItem.pip}"/>
-				<mx:ComboBox id = "pipCB" selectedItem = "{companiesGrid.selectedItem.pip}">
+				<mx:ComboBox id = "pipCB">
 				<mx:ArrayCollection>
+					<mx:Object label="{companiesGrid.selectedItem.pip}"/>
          			<mx:Object label="Kickoff"/>
          			<mx:Object label="In The Works"/>
          			<mx:Object label="Upcoming"/>
